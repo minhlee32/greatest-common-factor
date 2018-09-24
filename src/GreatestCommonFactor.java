@@ -2,26 +2,27 @@ import java.util.Scanner;
 
 public class GreatestCommonFactor {
     public static void main(String[] args) {
-        int a, b;
-        Scanner nhap = new Scanner(System.in);
-        System.out.println("Enter a: ");
-        a = nhap.nextInt();
-        System.out.println("Enter b: ");
-        b = nhap.nextInt();
+        int firstNumber;
+        int secondNumber;
+        Scanner enter = new Scanner(System.in);
+        System.out.println("Enter first number: ");
+        firstNumber = enter.nextInt();
+        System.out.println("Enter second number: ");
+        secondNumber = enter.nextInt();
 
-        a = Math.abs(a);
-        b = Math.abs(b);
+        firstNumber = Math.abs(firstNumber);
+        secondNumber = Math.abs(secondNumber);
 
-        if (a == 0 || b == 0)
+        if (firstNumber == 0 || secondNumber == 0)
             System.out.println("No greatest common factor");
 
-        while (a != b) {
-            if (a > b)
-                a = a - b;
+        while (firstNumber != secondNumber) {
+            if (firstNumber > secondNumber)
+                firstNumber = firstNumber - secondNumber;
             else
-                b = b - a;
+                secondNumber = secondNumber - firstNumber;
         }
-        System.out.println("Greatest common factor: " + a);
+        System.out.println("Greatest common factor: " + firstNumber);
 
     }
 }
